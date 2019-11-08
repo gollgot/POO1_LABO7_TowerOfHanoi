@@ -19,7 +19,7 @@ public class Stack {
         return obj;
     }
 
-    public Object[] getArray() {
+    public Object[] toArray() {
         Object[] data = new Object[size];
         Node current = top;
         for(int i = 0; current != null; ++i){
