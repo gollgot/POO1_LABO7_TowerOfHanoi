@@ -1,4 +1,5 @@
 import util.Stack;
+import util.StackIterator;
 
 public class Main {
 
@@ -10,9 +11,16 @@ public class Main {
         stack.push(new Personne("Jean"));
 
         System.out.println(stack);
-        Object[] data = stack.toArray();
-        ((Personne)data[0]).setName("LALA");
-        System.out.println(stack);
+
+        StackIterator it = stack.iterator();
+        System.out.print("[");
+        for(int i = 0; it.hasNext(); ++i){
+            if(i > 0){
+                System.out.print(", ");
+            }
+            System.out.print(it.next());
+        }
+        System.out.println("]");
 
     }
 }
