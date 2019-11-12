@@ -29,7 +29,7 @@ public class StackIterator {
      */
     public Object next() {
         if(node.next == null){
-            return new RuntimeException("The iteration has no more elements");
+            throw new RuntimeException("The iteration has no more elements");
         }
         node = node.next;
         return node.element;

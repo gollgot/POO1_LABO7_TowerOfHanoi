@@ -31,7 +31,7 @@ public class Stack {
      */
     public Object pop() {
         if(this.top == null){
-            return new RuntimeException("Impossible to pop from an empty stack");
+            throw new RuntimeException("Impossible to pop from an empty stack");
         }else {
             Object obj = this.top.element;
             this.top = this.top.next;
@@ -64,10 +64,14 @@ public class Stack {
      */
     public String toString() {
         String res = "";
-        Node current = top;
-        for(int i = 1; current != null; ++i){
-            res += "#" + i + " : " + current.element + "\n";
-            current = current.next;
+        if(top == null){
+            res += "Empty stack";
+        }else {
+            Node current = top;
+            for (int i = 1; current != null; ++i) {
+                res += "#" + i + " : " + current.element + "\n";
+                current = current.next;
+            }
         }
         return res;
     }
