@@ -64,15 +64,14 @@ public class Stack {
      */
     public String toString() {
         String res = "";
-        if(top == null){
-            res += "Empty stack";
-        }else {
-            Node current = top;
-            for (int i = 1; current != null; ++i) {
-                res += "#" + i + " : " + current.element + "\n";
-                current = current.next;
-            }
+        res += "[";
+        Node current = top;
+        for (int i = 1; current != null; ++i) {
+            res += " " + current.element;
+            current = current.next;
         }
+        res += "]";
+
         return res;
     }
 
