@@ -2,8 +2,6 @@ import hanoi.Hanoi;
 import util.Stack;
 import util.StackIterator;
 
-import java.util.Dictionary;
-
 public class Main {
 
     /**
