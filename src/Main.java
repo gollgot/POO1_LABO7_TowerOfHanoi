@@ -1,5 +1,8 @@
+import hanoi.Hanoi;
 import util.Stack;
 import util.StackIterator;
+
+import java.util.Dictionary;
 
 public class Main {
 
@@ -68,6 +71,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        testStack();
+        //testStack();
+        Hanoi hanoi = new Hanoi();
+        hanoi.solve();
     }
 }
