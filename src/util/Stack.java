@@ -66,11 +66,11 @@ public class Stack {
         String res = "";
         res += "[";
         Node current = top;
-        for (int i = 1; current != null; ++i) {
+        while (current != null) {
             res += " " + current.element;
             current = current.next;
         }
-        res += "]";
+        res += " ]";
 
         return res;
     }

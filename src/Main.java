@@ -1,5 +1,4 @@
 import hanoi.Hanoi;
-import hanoi.HanoiDisplayer;
 import hanoi.gui.JHanoi;
 import util.Stack;
 import util.StackIterator;
@@ -26,7 +25,7 @@ public class Main {
         System.out.print("[");
         for(int i = 0; it.hasNext(); ++i){
             if(i > 0){
-                System.out.print(", ");
+                System.out.print(",");
             }
             System.out.print(it.next());
         }
@@ -47,7 +46,7 @@ public class Main {
         int j = 0;
         for(Object o : array){
             if(j > 0){
-                System.out.print(", ");
+                System.out.print(",");
             }
             System.out.print(o);
             ++j;
@@ -56,7 +55,7 @@ public class Main {
 
         System.out.println("-- Pop all elements and display the stack --");
         it = stack.iterator();
-        for(int i = 0; it.hasNext(); ++i){
+        while(it.hasNext()){
             stack.pop();
             it.next();
         }
@@ -71,13 +70,16 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        //testStack();
+
+        // Graphical display
         JHanoi j = new JHanoi();
-        /*
-        HanoiDisplayer hDisplayer = new HanoiDisplayer();
-        Hanoi h = new Hanoi(3, hDisplayer);
+
+        // Console display
+        Hanoi h = new Hanoi(7);
         h.solve();
-        hDisplayer.display(h);
-        */
-         // TODO : Constructeur défaut hanoi, faire Un, deux, trois dans displayer.display, virer Disk class et toutes les tostrings
+
+        // todo : Faire le programme de test avec lecture du nb de disk en ligne de commande (dernier point slide labo)
+
     }
 }

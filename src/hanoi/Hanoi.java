@@ -9,6 +9,12 @@ public class Hanoi {
     private HanoiDisplayer displayer;
 
     public Hanoi(int disks) {
+        this(disks, new HanoiDisplayer());
+    }
+
+    public Hanoi(int disks, HanoiDisplayer displayer) {
+        this.displayer = displayer;
+
         // create the three needles i.e. the towers
         this.needles = new Stack[] {new Stack(), new Stack(), new Stack()};
 
@@ -19,12 +25,8 @@ public class Hanoi {
         this.nbDisks = disks;
     }
 
-    public Hanoi(int disks, HanoiDisplayer displayer) {
-        this(disks);
-        this.displayer = displayer;
-    }
-
     public void solve() {
+        this.displayer.display(this);
         this.solver(this.nbDisks, this.needles[0], this.needles[1], this.needles[2]);
     }
 
@@ -32,16 +34,16 @@ public class Hanoi {
         if (disk == 1) {
             this.move(src, dest);
         } else {
-            solver(disk - 1, src, dest, aux);
+            this.solver(disk - 1, src, dest, aux);
             this.move(src, dest);
-            solver(disk - 1, aux, src, dest);
+            this.solver(disk - 1, aux, src, dest);
         }
     }
 
     private void move(Stack src, Stack dest) {
         dest.push(src.pop());
         ++this.moves;
-        displayer.display(this);
+        this.displayer.display(this);
     }
 
     public int turn() {
