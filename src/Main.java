@@ -7,7 +7,7 @@ public class Main {
     /**
      * Test our Stack class with a lot of different cases
      */
-    public static void testStack(){
+    private static void testStack() {
         Stack stack = new Stack();
 
         System.out.println("-- Push 1,2,3 into the stack and display it --");
@@ -69,8 +69,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //testStack();
-        Hanoi hanoi = new Hanoi();
-        hanoi.solve();
+        // testStack();
+
+        Hanoi h = new Hanoi(3);
+
+        h.solve();
     }
 }
