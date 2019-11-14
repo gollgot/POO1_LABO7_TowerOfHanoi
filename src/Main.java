@@ -1,4 +1,6 @@
 import hanoi.Hanoi;
+import hanoi.HanoiDisplayer;
+import hanoi.gui.JHanoi;
 import util.Stack;
 import util.StackIterator;
 
@@ -69,10 +71,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // testStack();
-
-        Hanoi h = new Hanoi(3);
-
+        JHanoi j = new JHanoi();
+        /*
+        HanoiDisplayer hDisplayer = new HanoiDisplayer();
+        Hanoi h = new Hanoi(3, hDisplayer);
         h.solve();
+        hDisplayer.display(h);
+        */
+         // TODO : Constructeur défaut hanoi, faire Un, deux, trois dans displayer.display, virer Disk class et toutes les tostrings
     }
 }

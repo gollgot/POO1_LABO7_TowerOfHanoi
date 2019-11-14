@@ -6,6 +6,7 @@ public class Hanoi {
     private int moves;
     private int nbDisks;
     private Stack[] needles;
+    private HanoiDisplayer displayer;
 
     public Hanoi(int disks) {
         // create the three needles i.e. the towers
@@ -19,11 +20,11 @@ public class Hanoi {
     }
 
     public Hanoi(int disks, HanoiDisplayer displayer) {
-
+        this(disks);
+        this.displayer = displayer;
     }
 
     public void solve() {
-        this.display();
         this.solver(this.nbDisks, this.needles[0], this.needles[1], this.needles[2]);
     }
 
@@ -40,16 +41,7 @@ public class Hanoi {
     private void move(Stack src, Stack dest) {
         dest.push(src.pop());
         ++this.moves;
-        this.display();
-    }
-
-    private void display() {
-        int i = 1;
-        System.out.println("-- Turn: " + this.turn());
-        for(Stack needle : needles){
-            System.out.println(i + ":   " + needle);
-            ++i;
-        }
+        displayer.display(this);
     }
 
     public int turn() {
