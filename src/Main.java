@@ -70,14 +70,39 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        // No arguments => Run the graphical display
+        if(args.length == 0){
+            JHanoi j = new JHanoi();
+        }
+        // One argument (int > 0) => Run the console display
+        else if(args.length == 1) {
+            try{
+                int disks;
+                disks = Integer.parseInt(args[0]);
+                if(disks > 0){
+                    Hanoi h = new Hanoi(disks);
+                    h.solve();
+                }else{
+                    System.err.println("Argument must be greater than 0");
+                }
+            }
+            catch(NumberFormatException e){
+                System.err.println("Argument must be an integer value");
+            }
+
+
+        }
+        // Too many argument
+        else {
+            System.err.println("Only one argument is required");
+        }
+
         //testStack();
 
-        // Graphical display
-        JHanoi j = new JHanoi();
 
-        // Console display
-        Hanoi h = new Hanoi(7);
-        h.solve();
+
+
 
         // todo : Faire le programme de test avec lecture du nb de disk en ligne de commande (dernier point slide labo)
 
