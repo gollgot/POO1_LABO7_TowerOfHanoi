@@ -40,8 +40,6 @@ public class Stack {
         }
     }
 
-    // todo : Est ce qu on autorise de renvoyer un tableau vide dans le cas d'une stack vide ? (CF stack java)
-
     /**
      * Returns an array containing all of the objects in the Stack in the correct order
      * (index 0 of the array will be the object at the top of the Stack)

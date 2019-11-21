@@ -6,7 +6,7 @@ import util.StackIterator;
 public class Main {
 
     /**
-     * Test our Stack class with a lot of different cases
+     * Some cases to test if our stack works
      */
     private static void testStack() {
         Stack stack = new Stack();
@@ -71,7 +71,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // No arguments => Run the graphical display
+        // No arguments found => Run the graphical display
         if(args.length == 0){
             JHanoi j = new JHanoi();
         }
@@ -99,12 +99,6 @@ public class Main {
         }
 
         //testStack();
-
-
-
-
-
-        // todo : Faire le programme de test avec lecture du nb de disk en ligne de commande (dernier point slide labo)
 
     }
 }
