@@ -98,7 +98,5 @@ public class Main {
             System.err.println("Only one argument is required");
         }
 
-        //testStack();
-
     }
 }
