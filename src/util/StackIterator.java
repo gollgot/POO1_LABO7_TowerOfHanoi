@@ -15,7 +15,7 @@ public class StackIterator {
     }
 
     /**
-     * Check if the iteration has more elements
+     * Check if there is a next Element
      *
      * @return True if the iteration has more elements, false otherwise
      */
@@ -24,14 +24,14 @@ public class StackIterator {
     }
 
     /**
-     * Returns the next element in the iteration
+     * Get the next Element in the Stack
      *
-     * @return The next element in the iteration
-     * @throws RuntimeException if the iteration has no more elements
+     * @return next Element of the Stack
+     * @throws RuntimeException if there isn't any next Element
      */
     public Object next() {
         if (node.next == null) {
-            throw new RuntimeException("The iteration has no more elements");
+            throw new RuntimeException("The Stack has no more elements");
         }
         node = node.next;
         return node.element;

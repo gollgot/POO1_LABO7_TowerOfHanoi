@@ -12,9 +12,9 @@ public class HanoiDisplayer {
     private String[] needleNames = {"One  ", "Two  ", "Three"};
 
     /**
-     * Display the Hanoi's status
+     * Display the current state of a Hanoi tower
      *
-     * @param hanoi The Hanoi object for which we want to display the status
+     * @param hanoi to display
      */
     public void display(Hanoi hanoi) {
         System.out.println("-- Turn: " + hanoi.turn());

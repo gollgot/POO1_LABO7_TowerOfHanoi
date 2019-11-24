@@ -16,9 +16,7 @@ public class Hanoi {
     private HanoiDisplayer displayer;
 
     /**
-     * Constructor for console displaying
-     *
-     * @param disks The number of disks for the hanoi tower
+     * @param disks number of disks for the Hanoi tower
      */
     public Hanoi(int disks) {
         // For the console display, we use our HanoiDisplayer
@@ -26,10 +24,8 @@ public class Hanoi {
     }
 
     /**
-     * Full constructor (This one will be directly use by the hanoi GUI, with its own HanoiDisplayer)
-     *
-     * @param disks     The number of disks for the hanoi tower
-     * @param displayer The displayer that will be use for the displaying
+     * @param disks     number of disks for the hanoi tower
+     * @param displayer used to display the tower
      */
     public Hanoi(int disks, HanoiDisplayer displayer) {
         this.displayer = displayer;
@@ -45,67 +41,70 @@ public class Hanoi {
     }
 
     /**
-     * Display the initial state and resolve the hanoi tower problem
+     * Solve the Hanoi problem
      */
     public void solve() {
+        // display the initial state of the tower
         this.displayer.display(this);
+        // run the solver \o/
         this.solver(this.nbDisks, this.needles[0], this.needles[1], this.needles[2]);
     }
 
     /**
-     * Resolve in a recursive way the hanoi tower problem. It will move a nb of disks from a niddle source to a
-     * destination niddle via an auxiliary niddle.
+     * Solve the Hanoi towers problem using recursion.
+     * NOTE: The disks will be move from a `source` needle to a `destination` needle using
+     * an auxiliary one.
      *
-     * @param disk The nb of disk to move
-     * @param src  Source The source niddle as a Stack
-     * @param aux  Auxiliary The auxiliary niddle as a Stack
-     * @param dest The source niddle as a Stack
+     * @param nbDisks The nb of disk to move
+     * @param src  source needle
+     * @param aux  auxiliary needle
+     * @param dest destination needle
      */
-    private void solver(int disk, Stack src, Stack aux, Stack dest) {
-        if (disk == 1) {
+    private void solver(int nbDisks, Stack src, Stack aux, Stack dest) {
+        if (nbDisks == 1) {
             this.move(src, dest);
         } else {
-            this.solver(disk - 1, src, dest, aux);
+            this.solver(nbDisks - 1, src, dest, aux);
             this.move(src, dest);
-            this.solver(disk - 1, aux, src, dest);
+            this.solver(nbDisks - 1, aux, src, dest);
         }
     }
 
     /**
-     * Move one disk from the source niddle to the destination niddle and display the state via the displayer
+     * Move a disk from a source needle to a destination needle and display the current state of the tower
      *
-     * @param src  The source niddle as a Stack
-     * @param dest The destination niddle as a Stack
+     * @param src  source needle
+     * @param dest destination needle
      */
     private void move(Stack src, Stack dest) {
         dest.push(src.pop());
-        ++this.moves; // Increase the moves number
+        ++this.moves;
         this.displayer.display(this);
     }
 
     /**
      * Return the current number of move
      *
-     * @return The current number of move
+     * @return current number of move
      */
     public int turn() {
         return this.moves;
     }
 
     /**
-     * Check if we solved
-     * (To do that we used a formula => total moves to solve = nbDisk^2 - 1)
+     * Check if the problem was solved
+     * NOTE: if the current nb of moves is equal to 2^nbDisk - 1 then the problem if finished \o/
      *
-     * @return True if it's solved, false otherwise
+     * @return True if it's solved, otherwise false
      */
     public boolean finished() {
         return this.moves == Math.pow(2, this.nbDisks - 1);
     }
 
     /**
-     * The current status of our hanoi tower (each needles and disks)
+     * The current state of the Hanoi towers
      *
-     * @return A bidimensional array that represents the current status of our hanoi tower (each needles and disks)
+     * @return Bidimensional Array representing the current state of the Hanoi tower
      */
     public int[][] status() {
         int[][] status = new int[3][];

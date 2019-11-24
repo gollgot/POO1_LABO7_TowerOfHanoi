@@ -6,7 +6,7 @@ import util.StackIterator;
 public class Main {
 
     /**
-     * Some cases to test if our stack works
+     * Test cases for the Stack object
      */
     private static void testStack() {
         Stack stack = new Stack();
@@ -38,7 +38,9 @@ public class Main {
             System.out.println("RuntimeException : " + e.getMessage() + "\n");
         }
 
-        System.out.println("-- Push 5,6 and display the array we have using toArray() method on the stack (top element on the left) --");
+        System.out.println("" +
+                "-- Push 5,6 and display the array we have using toArray() " +
+                "method on the stack (top element on the left) --");
         stack.push(5);
         stack.push(6);
         Object[] array = stack.toArray();

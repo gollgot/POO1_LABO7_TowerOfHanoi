@@ -1,8 +1,8 @@
 /*
  * Fichier  : Stack.java
  * Auteurs  : Dessaules Loïc, Kayoumi Doran
- * But      : Permet de représenter une pile simple (Last In - First Out) qui peut contenir un nombre quelconque
- *            d'éléments de type Object. Les méthodes implémentées sont : push(), pop(), toArray(), toString(), iterator()
+ * But      : Permet de représenter une pile (Last In - First Out) qui peut contenir un nombre quelconque  d'éléments
+ *            de type Object. Les méthodes implémentées sont : push(), pop(), toArray(), toString(), iterator()
  * Date     : 09.11.2019
  */
 
@@ -14,9 +14,9 @@ public class Stack {
     private int size;
 
     /**
-     * Pushes an item onto the top of the stack
+     * Push an item onto the top of the Stack
      *
-     * @param object the object we want to push
+     * @param object to push
      */
     public void push(Object object) {
         Node node = new Node(object);
@@ -26,14 +26,14 @@ public class Stack {
     }
 
     /**
-     * Removes the object at the top of the stack and returns that object
+     * Remove and return the top element of the Stack
      *
-     * @return The object at the top of the stack
-     * @throws RuntimeException if the tack is empty
+     * @return top element of the Stack
+     * @throws RuntimeException when used on an empty Stack
      */
     public Object pop() {
         if (this.top == null) {
-            throw new RuntimeException("Impossible to pop from an empty stack");
+            throw new RuntimeException("Impossible to pop from an empty Stack");
         } else {
             Object obj = this.top.element;
             this.top = this.top.next;
@@ -43,10 +43,10 @@ public class Stack {
     }
 
     /**
-     * Returns an array containing all of the objects in the Stack in the correct order
-     * (index 0 of the array will be the object at the top of the Stack)
+     * Create an Array representation of the Stack
+     * NOTE: index 0 of the array will be the top element of the Stack
      *
-     * @return An array containing all of the objects in the Stack
+     * @return Array representation of the Stack
      */
     public Object[] toArray() {
         Object[] data = new Object[size];
@@ -59,10 +59,10 @@ public class Stack {
     }
 
     /**
-     * Returns The String representation of the Stack, containing a String representation of each object.
-     * All Object contains in the stack must be representative as a String
+     * Create a String representation of the Stack
+     * NOTE: All Elements contained in the stack NEED to be displayable
      *
-     * @return The String representation of the Stack
+     * @return String representation of the Stack
      */
     public String toString() {
         String res = "";
@@ -78,9 +78,9 @@ public class Stack {
     }
 
     /**
-     * Returns an iterator over the objects in the Stack in proper sequence
+     * Create a StackIterator pointing before the first element of the Stack
      *
-     * @return An iterator over the objects in the Stack in proper sequence
+     * @return StackIterator
      */
     public StackIterator iterator() {
         Node nodeBefore = new Node(null);
