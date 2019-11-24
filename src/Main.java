@@ -23,8 +23,8 @@ public class Main {
         System.out.println("-- Display the stack using StackIterator (top element on the left) --");
         StackIterator it = stack.iterator();
         System.out.print("[");
-        for(int i = 0; it.hasNext(); ++i){
-            if(i > 0){
+        for (int i = 0; it.hasNext(); ++i) {
+            if (i > 0) {
                 System.out.print(",");
             }
             System.out.print(it.next());
@@ -32,9 +32,9 @@ public class Main {
         System.out.println("]\n");
 
         System.out.println("-- Call iterator.next() when we already go through all element --");
-        try{
+        try {
             it.next();
-        }catch(RuntimeException e){
+        } catch (RuntimeException e) {
             System.out.println("RuntimeException : " + e.getMessage() + "\n");
         }
 
@@ -44,8 +44,8 @@ public class Main {
         Object[] array = stack.toArray();
         System.out.print("[");
         int j = 0;
-        for(Object o : array){
-            if(j > 0){
+        for (Object o : array) {
+            if (j > 0) {
                 System.out.print(",");
             }
             System.out.print(o);
@@ -55,7 +55,7 @@ public class Main {
 
         System.out.println("-- Pop all elements and display the stack --");
         it = stack.iterator();
-        while(it.hasNext()){
+        while (it.hasNext()) {
             stack.pop();
             it.next();
         }
@@ -64,7 +64,7 @@ public class Main {
         System.out.println("-- Call the pop() method when the stack is empty --");
         try {
             stack.pop();
-        }catch(RuntimeException e) {
+        } catch (RuntimeException e) {
             System.out.println("RuntimeException : " + e.getMessage() + "\n");
         }
     }
@@ -72,22 +72,21 @@ public class Main {
     public static void main(String[] args) {
 
         // No arguments found => Run the graphical display
-        if(args.length == 0){
+        if (args.length == 0) {
             JHanoi j = new JHanoi();
         }
         // One argument (int > 0) => Run the console display
-        else if(args.length == 1) {
-            try{
+        else if (args.length == 1) {
+            try {
                 int disks;
                 disks = Integer.parseInt(args[0]);
-                if(disks > 0){
+                if (disks > 0) {
                     Hanoi h = new Hanoi(disks);
                     h.solve();
-                }else{
+                } else {
                     System.err.println("Argument must be greater than 0");
                 }
-            }
-            catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.err.println("Argument must be an integer value");
             }
 

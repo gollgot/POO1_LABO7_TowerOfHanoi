@@ -10,12 +10,13 @@ package util;
 public class StackIterator {
     private Node node;
 
-    StackIterator (Node node) {
+    StackIterator(Node node) {
         this.node = node;
     }
 
     /**
      * Check if the iteration has more elements
+     *
      * @return True if the iteration has more elements, false otherwise
      */
     public boolean hasNext() {
@@ -24,11 +25,12 @@ public class StackIterator {
 
     /**
      * Returns the next element in the iteration
-     * @throws RuntimeException if the iteration has no more elements
+     *
      * @return The next element in the iteration
+     * @throws RuntimeException if the iteration has no more elements
      */
     public Object next() {
-        if(node.next == null){
+        if (node.next == null) {
             throw new RuntimeException("The iteration has no more elements");
         }
         node = node.next;

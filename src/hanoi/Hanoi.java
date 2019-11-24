@@ -17,6 +17,7 @@ public class Hanoi {
 
     /**
      * Constructor for console displaying
+     *
      * @param disks The number of disks for the hanoi tower
      */
     public Hanoi(int disks) {
@@ -26,14 +27,15 @@ public class Hanoi {
 
     /**
      * Full constructor (This one will be directly use by the hanoi GUI, with its own HanoiDisplayer)
-     * @param disks The number of disks for the hanoi tower
+     *
+     * @param disks     The number of disks for the hanoi tower
      * @param displayer The displayer that will be use for the displaying
      */
     public Hanoi(int disks, HanoiDisplayer displayer) {
         this.displayer = displayer;
 
         // create the three needles i.e. the towers
-        this.needles = new Stack[] {new Stack(), new Stack(), new Stack()};
+        this.needles = new Stack[]{new Stack(), new Stack(), new Stack()};
 
         // add all the disks to the first needle
         for (int i = disks; i > 0; --i) {
@@ -53,9 +55,10 @@ public class Hanoi {
     /**
      * Resolve in a recursive way the hanoi tower problem. It will move a nb of disks from a niddle source to a
      * destination niddle via an auxiliary niddle.
+     *
      * @param disk The nb of disk to move
-     * @param src Source The source niddle as a Stack
-     * @param aux Auxiliary The auxiliary niddle as a Stack
+     * @param src  Source The source niddle as a Stack
+     * @param aux  Auxiliary The auxiliary niddle as a Stack
      * @param dest The source niddle as a Stack
      */
     private void solver(int disk, Stack src, Stack aux, Stack dest) {
@@ -70,7 +73,8 @@ public class Hanoi {
 
     /**
      * Move one disk from the source niddle to the destination niddle and display the state via the displayer
-     * @param src The source niddle as a Stack
+     *
+     * @param src  The source niddle as a Stack
      * @param dest The destination niddle as a Stack
      */
     private void move(Stack src, Stack dest) {
@@ -81,6 +85,7 @@ public class Hanoi {
 
     /**
      * Return the current number of move
+     *
      * @return The current number of move
      */
     public int turn() {
@@ -88,8 +93,9 @@ public class Hanoi {
     }
 
     /**
-     *  Check if we solved
-     *  (To do that we used a formula => total moves to solve = nbDisk^2 - 1)
+     * Check if we solved
+     * (To do that we used a formula => total moves to solve = nbDisk^2 - 1)
+     *
      * @return True if it's solved, false otherwise
      */
     public boolean finished() {
@@ -98,6 +104,7 @@ public class Hanoi {
 
     /**
      * The current status of our hanoi tower (each needles and disks)
+     *
      * @return A bidimensional array that represents the current status of our hanoi tower (each needles and disks)
      */
     public int[][] status() {
@@ -105,7 +112,7 @@ public class Hanoi {
 
         // Loop through all needles
         for (int i = 0; i < needles.length; ++i) {
-            Object needle[] = this.needles[i].toArray();
+            Object[] needle = this.needles[i].toArray();
             status[i] = new int[needle.length];
             // Loop through all disks in the needle
             for (int j = 0; j < needle.length; ++j) {
