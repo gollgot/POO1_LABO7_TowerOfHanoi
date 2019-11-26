@@ -1,3 +1,11 @@
+/*
+ * Fichier : Main.java
+ * Auteurs : Dessaules Loïc, Kayoumi Doran
+ * But     : Par rapport aux arguments de la console, on lance le mode console ou graphique des
+ *           tours de Hanoï.
+ * Date    : 21.11.2019
+ */
+
 import hanoi.Hanoi;
 import hanoi.gui.JHanoi;
 import util.Stack;

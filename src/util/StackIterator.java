@@ -1,7 +1,8 @@
 /*
  * Fichier  : StackIterator.java
  * Auteurs  : Dessaules Loïc, Kayoumi Doran
- * But      : Permet de représenter un iterateur afin de pouvoir itérer à travers chaque éléments de la pile associée
+ * But      : Permet de représenter un iterateur afin de pouvoir itérer à travers chaque éléments
+ *            de la pile associée
  * Date     : 09.11.2019
  */
 

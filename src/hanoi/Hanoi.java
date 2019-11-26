@@ -1,7 +1,8 @@
 /*
  * Fichier  : Hanoi.java
  * Auteurs  : Dessaules Loïc, Kayoumi Doran
- * But      : Permet de représenter une tour de Hanoi et résoudre le problème du déplacement de disque
+ * But      : Permet de représenter une tour de Hanoi et résoudre le problème du déplacement
+ *            de disque
  * Date     : 21.11.2019
  */
 

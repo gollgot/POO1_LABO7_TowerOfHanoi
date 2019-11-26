@@ -1,8 +1,9 @@
 /*
  * Fichier  : Stack.java
  * Auteurs  : Dessaules Loïc, Kayoumi Doran
- * But      : Permet de représenter une pile (Last In - First Out) qui peut contenir un nombre quelconque  d'éléments
- *            de type Object. Les méthodes implémentées sont : push(), pop(), toArray(), toString(), iterator()
+ * But      : Permet de représenter une pile (Last In - First Out) qui peut contenir un nombre
+ *            quelconque  d'éléments de type Object. Les méthodes implémentées sont : push(), pop(),
+ *            toArray(), toString(), iterator()
  * Date     : 09.11.2019
  */
 
